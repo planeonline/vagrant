@@ -1,0 +1,12 @@
+<VirtualHost *:80>        
+        ServerName <%= @params[:server_name] %>
+        ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
+        ProxyRequests Off
+        <Proxy *>
+                Order deny,allow
+                Allow from all
+        </Proxy>
+        ProxyPreserveHost on
+        ProxyPass / http://localhost:8080/
+        ProxyPassReverse / http://localhost:8080/
+</VirtualHost>
