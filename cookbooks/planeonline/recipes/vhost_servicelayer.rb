@@ -7,3 +7,11 @@ web_app "service-layer" do
   docroot "/projects/www/service-layer/public"
   directory_index ["index.html","index.htm","index.php"]
 end
+
+bash "symlink_service-layer" do    
+  user "root"
+  code <<-EOL  
+  ln -s /projects/www/service-layer /home/vagrant/sl
+  EOL
+  not_if {File.exists?("~/sl")}
+end
