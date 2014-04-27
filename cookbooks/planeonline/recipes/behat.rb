@@ -15,9 +15,9 @@ end
 bash "install_behat" do
   cwd "/opt/behat"
   user "root"
-  code <<-EOL  
-  curl -sS https://getcomposer.org/installer | php
-  composer install
+  code <<-EOL    
+  composer install -q
   ln -s /opt/behat/bin/behat /bin/behat
   EOL
+  not_if {File.exists?("/opt/behat/bin/behat")}
 end

@@ -59,7 +59,7 @@ run_list(
     "recipe[chef-php-extra::module_mbstring]",
     "recipe[chef-php-extra::xdebug]",
     "recipe[chef-php-extra::PHPUnit]",    
-    "recipe[planeonline::phalconphp]",
+    "recipe[phalconphp]",
     "recipe[planeonline::db]",
     "recipe[planeonline::composer]",
     "recipe[planeonline::behat]",

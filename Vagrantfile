@@ -95,7 +95,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
-  	chef.roles_path = "./roles"
+    chef.roles_path = "./roles"
     chef.cookbooks_path = "./cookbooks"
     chef.add_role "www-planeonline-co-uk"
 
