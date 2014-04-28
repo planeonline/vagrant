@@ -17,7 +17,8 @@ bash "install_behat" do
   user "root"
   code <<-EOL    
   composer install -q
-  ln -s /opt/behat/bin/behat /bin/behat
+  ln -s /opt/behat/bin/behat /usr/bin/behat
+  chmod ugo+x /usr/bin/phalcon
   EOL
   not_if {File.exists?("/opt/behat/bin/behat")}
 end

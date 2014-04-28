@@ -13,5 +13,5 @@ bash "symlink_service-layer" do
   code <<-EOL  
   ln -s /projects/www/service-layer /home/vagrant/sl
   EOL
-  not_if {File.exists?("~/sl")}
+  not_if {File.exists?("/home/vagrant/sl")}
 end

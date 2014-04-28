@@ -12,5 +12,5 @@ bash "symlink_jobs" do
   ln -s /projects/jenkins/jobs /home/vagrant/jobs  
   chown vagrant /home/vagrant/jobs 
   EOL
-  not_if {File.exists?("~/jobs")}
+  not_if {File.exists?("/home/vagrant/jobs")}
 end
