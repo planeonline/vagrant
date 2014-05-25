@@ -7,9 +7,8 @@ override_attributes(
         "contact" => 'abn@webit4.me',
         "listen_ports" => ["80", "443"]                
     },
-    "mysql" => {
-        "server_root_password" => 'abn',
-        # "server_debian_password" => 'abn',
+    "mysql" => {        
+        "server_root_password" => 'abn',        
         "server_repl_password" => 'abn'        
     },
     "php" => {
@@ -38,8 +37,6 @@ override_attributes(
         }
     }
 )
-
-# node.override['php']['directives'] = { :display_errors => 'on' }
 
 # Run list function we mentioned earlier
 run_list(        

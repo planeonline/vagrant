@@ -3,6 +3,55 @@ mysql Cookbook CHANGELOG
 This file is used to list changes made in each version of the mysql cookbook.
 
 
+v5.2.12 (2014-05-19)
+--------------------
+PR #192 - recipes/server.rb should honor parameter node['mysql']['version']
+
+
+v5.2.10 (2014-05-15)
+--------------------
+- COOK-4394 - restore freebsd support
+
+
+v5.2.8 (2014-05-15)
+-------------------
+- [COOK-4653] - Missing mySQL 5.6 support for Ubuntu 14.04
+
+
+v5.2.6 (2014-05-07)
+-------------------
+- [COOK-4625] - Fix password resource parameter consumption on Debian and Ubuntu
+- Fix up typos and version numbers in PLATFORMS.md
+- Fix up specs from COOK-4613 changes
+
+
+v5.2.4 (2014-05-02)
+-------------------
+- [COOK-4613] - Fix permissions on mysql data_dir to allow global access to mysql.sock
+
+
+v5.2.2 (2014-04-24)
+-------------------
+- [COOK-4564] - Using positive tests for datadir move
+
+
+v5.2.0 (2014-04-22)
+-------------------
+- [COOK-4551] - power grants.sql from resource parameters
+
+
+v5.1.12 (2014-04-21)
+--------------------
+- [COOK-4554] - Support for Debian Sid
+
+
+v5.1.10 (2014-04-21)
+--------------------
+- [COOK-4565] Support for Ubuntu 14.04
+- [COOK-4565] Adding Specs and TK platform
+- Removing non-LTS 13.10 specs and TK platform
+
+
 v5.1.8 (2014-04-12)
 -------------------
 Adding Ubuntu 13.04 to Platforminfo

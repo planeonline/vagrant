@@ -35,11 +35,19 @@ module Opscode
         when platform_family == 'fedora'
           platform_version
         when platform_family == 'debian'
-          platform == 'ubuntu' ? platform_version : platform_version.to_i.to_s
+          if platform == 'ubuntu'
+            platform_version
+          elsif platform_version =~ /sid$/
+            platform_version
+          else
+            platform_version.to_i.to_s
+          end
         when platform_family == 'smartos'
           platform_version
         when platform_family == 'omnios'
           platform_version
+        when platform_family == 'freebsd'
+          platform_version.to_i.to_s
         end
       rescue NoMethodError
         nil
@@ -81,6 +89,13 @@ module Opscode
               },
               '5.5' => {
                 'package_name' => 'mysql55-server',
+                'service_name' => 'mysqld'
+              }
+            },
+            '2013.03' => {
+              'default_version' => '5.5',
+              '5.5' => {
+                'package_name' => 'mysql-server',
                 'service_name' => 'mysqld'
               }
             },
@@ -129,6 +144,13 @@ module Opscode
                 'service_name' => 'mysqld'
               }
             },
+            'jessie/sid' => {
+              'default_version' => '5.5',
+              '5.5' => {
+                'package_name' => 'mysql-server-5.5',
+                'service_name' => 'mysqld'
+              }
+            },
             '10.04' => {
               'default_version' => '5.1',
               '5.1' => {
@@ -155,6 +177,17 @@ module Opscode
               '5.5' => {
                 'package_name' => 'mysql-server-5.5',
                 'service_name' => 'mysqld'
+              }
+            },
+            '14.04' => {
+              'default_version' => '5.5',
+              '5.5' => {
+                'package_name' => 'mysql-server-5.5',
+                'service_name' => 'mysql'
+              },
+              '5.6' => {
+                'package_name' => 'mysql-server-5.6',
+                'service_name' => 'mysql'
               }
             }
           },
@@ -185,6 +218,16 @@ module Opscode
               '5.6' => {
                 'package_name' => 'database/mysql-56',
                 'service_name' => 'mysql'
+              }
+            }
+          },
+          'freebsd' => {
+            'default_data_dir' => '/var/db/mysql',
+            '10' => {
+              'default_version' => '5.5',
+              '5.5' => {
+                'package_name' => 'mysql55-server',
+                'service_name' => 'mysql-server'
               }
             }
           }

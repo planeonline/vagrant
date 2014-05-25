@@ -15,7 +15,7 @@ driver_config:
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 11.10.4
+  require_chef_omnibus: latest
 
 platforms:
 - name: centos-5.8
@@ -30,7 +30,7 @@ platforms:
 - name: centos-6.5
   driver_plugin: digitalocean
   driver_config:
-    image_id: 3102789
+    image_id: 3448641
     flavor_id: 63
     region_id: 4
     ssh_key_ids: <%= ENV['DIGITAL_OCEAN_SSH_KEY_IDS'] %>
@@ -94,10 +94,10 @@ platforms:
   run_list:
   - recipe[apt]
 
-- name: ubuntu-13.10
+- name: ubuntu-14.04
   driver_plugin: digitalocean
   driver_config:
-    image_id: 3101918
+    image_id: 3240036
     flavor_id: 63
     region_id: 4
     ssh_key_ids: <%= ENV['DIGITAL_OCEAN_SSH_KEY_IDS'] %>
@@ -169,7 +169,7 @@ suites:
     - recipe[mysql_test_custom::server]
     includes: [
       'centos-5.8',
-      'centos-6.4',
+      'centos-6.5',
       'amazon-2013.09',
       'ubuntu-10.04'
     ]
@@ -182,7 +182,7 @@ suites:
     - recipe[mysql_test_custom::server]
     includes: [
       'centos-5.8',
-      'centos-6.4',
+      'centos-6.5',
       'amazon-2013.09',
       'amazon-2014.03',
       'ubuntu-10.04'
@@ -206,6 +206,7 @@ suites:
       'debian-7.0',
       'ubuntu-12.04',
       'ubuntu-13.10',
+      'ubuntu-14.04',
       'smartos-13.4.0',
       'omnios-151006'
     ]
@@ -239,18 +240,19 @@ suites:
     run_list:
     - recipe[mysql_test_custom::server]
     includes: [
+      'ubuntu-14.04',
       'smartos-13.4.0',
-      'omnios-151006'
+      'omnios-151006',
     ]
     attributes:
       mysql:
         version: '5.6'
-        data_dir: '/data'
 
   - name: server56-custom
     run_list:
     - recipe[mysql_test_custom::server]
     includes: [
+      'ubuntu-14.04',
       'smartos-13.4.0',
       'omnios-151006'
     ]
