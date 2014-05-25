@@ -15,7 +15,8 @@ override_attributes(
     "php" => {
         "ini_settings" => {
             "error_reporting" => 'E_ALL',
-            "display_errors" => 'On'        
+            "display_errors" => 'On',
+            "phar.readonly" => '0',     
         },
         "directives" =>{
             "error_reporting" => 'E_ALL',
@@ -65,5 +66,6 @@ run_list(
     "recipe[planeonline::behat]",
     "recipe[planeonline::vhost_git]",    
     "recipe[planeonline::vhost_jenkins]",    
-    "recipe[planeonline::vhost_servicelayer]",        
+    "recipe[planeonline::vhost_servicelayer]",
+    "recipe[planeonline::phinx]",
 )
