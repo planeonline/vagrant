@@ -15,7 +15,8 @@ override_attributes(
         "ini_settings" => {
             "error_reporting" => 'E_ALL',
             "display_errors" => 'On',
-            "phar.readonly" => '0',     
+            "phar.readonly" => '0',
+            "date.timezone" => 'Europe/London'
         },
         "directives" =>{
             "error_reporting" => 'E_ALL',
