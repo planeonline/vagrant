@@ -64,5 +64,6 @@ run_list(
     "recipe[planeonline::vhost_git]",    
     "recipe[planeonline::vhost_jenkins]",    
     "recipe[planeonline::vhost_servicelayer]",
+    "recipe[planeonline::vhost_servicelayer_ci]",
     "recipe[planeonline::phinx]",
 )

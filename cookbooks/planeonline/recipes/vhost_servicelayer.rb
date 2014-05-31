@@ -6,6 +6,7 @@ web_app "service-layer" do
   allow_override "all"  
   docroot "/projects/www/service-layer/public"
   directory_index ["index.html","index.htm","index.php"]
+  set_env "ENVIRONMENT DEV"
 end
 
 bash "symlink_service-layer" do    
