@@ -29,6 +29,9 @@ override_attributes(
     "phpunit" => {
         "version" => '4.0.14',
     },
+    "PHP_CodeSniffer" => {
+        "version" => '2.0.0a2',
+    },
     "jenkins" => {
         "master" => {
             "install_method" => "package",
@@ -57,7 +60,8 @@ run_list(
     "recipe[chef-php-extra::module_mysql]",
     "recipe[chef-php-extra::module_mbstring]",
     "recipe[chef-php-extra::xdebug]",
-    "recipe[chef-php-extra::PHPUnit]",    
+    "recipe[chef-php-extra::PHPUnit]",
+    "recipe[chef-php-extra::PHP_CodeSniffer]",
     "recipe[phalconphp]",
     "recipe[planeonline::db]",
     "recipe[planeonline::composer]",
