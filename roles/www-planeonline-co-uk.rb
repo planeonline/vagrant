@@ -32,6 +32,9 @@ override_attributes(
     "PHP_CodeSniffer" => {
         "version" => '2.0.0a2',
     },
+    "java" => {
+        "jdk_version" => "7",
+    },
     "jenkins" => {
         "master" => {
             "install_method" => "package",
