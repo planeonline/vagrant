@@ -20,7 +20,9 @@ override_attributes(
         },
         "directives" =>{
             "error_reporting" => 'E_ALL',
-            "display_errors" => 'On'        
+            "display_errors" => 'On',      
+            "phar.readonly" => '0',
+            "date.timezone" => 'Europe/London'
         },
         "ius"  => '5.4',        
         "devel" => true,
