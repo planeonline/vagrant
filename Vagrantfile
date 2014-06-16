@@ -6,6 +6,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+  # Set the Timezone to something useful
+  config.vm.provision :shell, :inline => "sudo ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime"
+
   config.omnibus.chef_version = :latest
 
   # All Vagrant configuration is done here. The most common configuration
