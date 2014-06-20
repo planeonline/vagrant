@@ -8,7 +8,7 @@
 #
 
 git "/opt/behat" do
-  repository "https://github.com/Behat/Behat.git"  
+  repository "https://github.com/planeonline/Behat.git"  
   action :sync
 end
 
