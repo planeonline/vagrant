@@ -34,6 +34,9 @@ override_attributes(
     "PHP_CodeSniffer" => {
         "version" => '2.0.0a2',
     },
+    "oauth" => {
+         "version" => "1.2.3" 
+    },
     "java" => {
         "jdk_version" => "7",
     },
@@ -67,6 +70,7 @@ run_list(
     "recipe[chef-php-extra::xdebug]",
     "recipe[chef-php-extra::PHPUnit]",
     "recipe[chef-php-extra::PHP_CodeSniffer]",
+    "recipe[chef-php-extra::module_oauth]",
     "recipe[phalconphp]",
     "recipe[planeonline::db]",
     "recipe[planeonline::composer]",
@@ -75,5 +79,6 @@ run_list(
     "recipe[planeonline::vhost_jenkins]",    
     "recipe[planeonline::vhost_servicelayer]",
     "recipe[planeonline::vhost_servicelayer_ci]",
+    "recipe[planeonline::vhost_presentationlayer]",
     "recipe[planeonline::phinx]",
 )
