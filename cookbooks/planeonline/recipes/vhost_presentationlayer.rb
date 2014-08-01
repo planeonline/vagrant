@@ -1,8 +1,8 @@
 include_recipe "apache2"
 
 web_app "presentation-layer" do
-  server_name "presentation.planeonline.local"
-  server_aliases ["p.planeonline.local","pl.planeonline.local","presentation-layer.planeonline.local"]
+  server_name "www.planeonline.local"
+  server_aliases ["presentation.planeonline.local","p.planeonline.local","pl.planeonline.local","presentation-layer.planeonline.local"]
   allow_override "all"  
   docroot "/projects/www/presentation-layer/public"
   directory_index ["index.html","index.htm","index.php"]
