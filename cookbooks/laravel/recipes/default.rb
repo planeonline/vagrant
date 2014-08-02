@@ -14,6 +14,6 @@ bash "install_laravel" do
   code <<-EOL    
   curl -O http://laravel.com/laravel.phar
   mv laravel.phar /usr/local/bin/laravel
-  chmod ugo+x /usr/local/laravel
+  chmod ugo+x /usr/local/bin/laravel
   EOL
 end
